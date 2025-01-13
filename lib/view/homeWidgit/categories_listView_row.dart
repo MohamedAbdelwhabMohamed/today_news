@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:today_news/model/category_model.dart';
-import 'package:today_news/widget/categorys.dart';
+import 'package:today_news/widget/categorys_row.dart';
 
-class AllItem extends StatelessWidget {
-  const AllItem({super.key});
+class CategorysListViewRow extends StatelessWidget {
+  const CategorysListViewRow({super.key});
   final List<CategoryModel> categories = const [
     CategoryModel(
       image: 'assets/science.avif',
@@ -29,12 +29,8 @@ class AllItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Categorys(category: categories[index]),
-              ],
-            ),
+        itemBuilder: (context, index) =>
+            CategorysRow(category: categories[index]),
         itemCount: categories.length);
   }
 }

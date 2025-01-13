@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:today_news/widget/categories_list_View.dart';
+import 'package:today_news/view/homeWidgit/news_list_view.dart';
 
 class Home extends StatelessWidget {
   const Home({
@@ -20,8 +20,6 @@ class Home extends StatelessWidget {
             ],
           ),
         ),
-        body: const AllItem());
+        body: const NewsListView());
   }
-} // class
-
-
+}
