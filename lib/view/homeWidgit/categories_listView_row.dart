@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:today_news/model/category_model.dart';
-import 'package:today_news/widget/categorys_row.dart';
+import 'package:today_news/widget/custom_categorys_row.dart';
 
 class CategorysListViewRow extends StatelessWidget {
   const CategorysListViewRow({super.key});
@@ -27,10 +27,13 @@ class CategorysListViewRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) =>
-            CategorysRow(category: categories[index]),
-        itemCount: categories.length);
+    return SizedBox(
+      height: 85,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) =>
+              CustomCategorysRow(category: categories[index]),
+          itemCount: categories.length),
+    );
   }
 }

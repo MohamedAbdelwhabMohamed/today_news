@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:today_news/widget/news_column.dart';
+import 'package:today_news/widget/custom_news_column.dart';
 
 class NewsListView extends StatelessWidget {
   const NewsListView({
@@ -8,11 +8,10 @@ class NewsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: NewsColumn(),
-            ));
+    return SliverList(
+        delegate: SliverChildBuilderDelegate(
+      (context, index) => CustomNewsColumn(),
+      childCount: 10,
+    ));
   }
 }
