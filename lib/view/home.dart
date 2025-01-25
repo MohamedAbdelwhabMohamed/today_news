@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:today_news/view/homeWidgit/categories_listView_row.dart';
 import 'package:today_news/view/homeWidgit/news_list_view.dart';
-import 'package:today_news/widget/custom_news_column.dart';
 
 class Home extends StatelessWidget {
   const Home({
