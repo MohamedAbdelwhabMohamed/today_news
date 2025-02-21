@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:today_news/view/homeWidgit/categories_listView_row.dart';
-import 'package:today_news/view/homeWidgit/news_list_view.dart';
+
+import 'package:today_news/view/homeWidgit/categories_listView.dart';
+import 'package:today_news/widget/news_list_buider.dart';
 
 class Home extends StatelessWidget {
   const Home({
@@ -22,14 +23,16 @@ class Home extends StatelessWidget {
         ),
       ),
       body: const Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16),
         child: CustomScrollView(
           physics: BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(
-              child: CategorysListViewRow(),
+              child: CategoriesListView(),
             ),
-            NewsListView()
+            NewListViewGenerat(
+              categery: 'general',
+            )
           ],
         ),
       ),

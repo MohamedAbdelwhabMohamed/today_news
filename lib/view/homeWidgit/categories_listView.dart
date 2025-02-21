@@ -2,26 +2,26 @@
 
 import 'package:flutter/material.dart';
 import 'package:today_news/model/category_model.dart';
-import 'package:today_news/widget/custom_categorys_row.dart';
+import 'package:today_news/widget/Category_card.dart';
 
-class CategorysListViewRow extends StatelessWidget {
-  const CategorysListViewRow({super.key});
+class CategoriesListView extends StatelessWidget {
+  const CategoriesListView({super.key});
   final List<CategoryModel> categories = const [
     CategoryModel(
       image: 'assets/science.avif',
-      text: 'Science',
+      categoryName: 'Science',
     ),
     CategoryModel(
       image: 'assets/entertaiment.avif',
-      text: 'Entertainment',
+      categoryName: 'Entertainment',
     ),
     CategoryModel(
       image: 'assets/health.avif',
-      text: 'Health',
+      categoryName: 'Health',
     ),
     CategoryModel(
       image: 'assets/technology.jpeg',
-      text: 'Technology',
+      categoryName: 'Technology',
     ),
   ];
 
@@ -31,8 +31,9 @@ class CategorysListViewRow extends StatelessWidget {
       height: 85,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) =>
-              CustomCategorysRow(category: categories[index]),
+          itemBuilder: (context, index) => CategoryCard(
+                category: categories[index],
+              ),
           itemCount: categories.length),
     );
   }
